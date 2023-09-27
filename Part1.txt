@@ -1,0 +1,28 @@
+function sommes(s1, s2) {
+    // Initialiser la somme à 0
+    let somme = 0;
+    
+    // Parcourir les éléments du premier ensemble
+    for (let s of s1) {
+        // Si l'élément n'est pas déjà dans le deuxième ensemble, l'ajouter à la somme
+        if (!s2.includes(s)) {
+            somme += s;
+        }
+    }
+    
+    // Parcourir les éléments du deuxième ensemble
+    for (let s of s2) {
+        // Si l'élément n'est pas déjà dans le premier ensemble, l'ajouter à la somme
+        if (!s1.includes(s)) {
+            somme += s;
+        }
+    }
+    
+    return somme;
+}
+
+// Exemple d'utilisation
+const s1 = [3, 1, 7, 9];
+const s2 = [2, 4, 1, 9, 3];
+const resultat = sommes(s1, s2);
+console.log(resultat);

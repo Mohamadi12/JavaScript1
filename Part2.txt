@@ -1,0 +1,35 @@
+function produitScalaire(v1, v2) {
+    // Vérifier que les vecteurs ont la même longueur
+    if (v1.length !== v2.length) {
+        return null; // Impossible de calculer le produit scalaire
+    }
+
+    // Initialiser le produit scalaire à 0
+    let ps = 0;
+
+    // Parcourir les éléments des vecteurs et calculer le produit scalaire
+    for (let i = 0; i < v1.length; i++) {
+        ps += v1[i] * v2[i];
+    }
+
+    return ps;
+}
+
+function sontOrthogonaux(v1, v2) {
+    // Appel de la fonction produitScalaire pour calculer le produit scalaire
+    const ps = produitScalaire(v1, v2);
+
+    // Vérification si le produit scalaire est nul (vecteurs orthogonaux)
+    return ps === 0;
+}
+
+// Exemple d'utilisation
+const vecteur1 = [1, 2, 3];
+const vecteur2 = [2, -1, 0];
+const sontOrthogonaux = sontOrthogonaux(vecteur1, vecteur2);
+
+if (sontOrthogonaux) {
+    console.log("Les vecteurs sont orthogonaux.");
+} else {
+    console.log("Les vecteurs ne sont pas orthogonaux.");
+}
